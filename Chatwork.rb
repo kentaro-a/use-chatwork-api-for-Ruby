@@ -20,7 +20,7 @@ class Chatwork
 	# ルーム一覧取得
 	def getRooms()
 		ret = {}
-		uri = URI.parse("https://api.chatwork.com/v1/rooms");
+		uri = URI.parse("https://api.chatwork.com/v2/rooms");
 		
 		# httpクラス
 		http = Net::HTTP.new(uri.host, uri.port)
@@ -55,7 +55,7 @@ class Chatwork
 	# roomid: ルームID
 	# msg: メッセージ
 	def sendMessage(roomid, msg)
-		uri = URI.parse("https://api.chatwork.com/v1/rooms/#{roomid}/messages");
+		uri = URI.parse("https://api.chatwork.com/v2/rooms/#{roomid}/messages");
 
 		# httpクラス
 		http = Net::HTTP.new(uri.host, uri.port)
